@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl253p0j52w7u"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_4hwkr"]
+[ext_resource type="Texture2D" uid="uid://dbtpg63iujnkp" path="res://art/Bec_stand.png" id="2_geqff"]
+[ext_resource type="Texture2D" uid="uid://uokbc3kdckiy" path="res://art/Bec_walk_down_1.png" id="3_n5twp"]
+[ext_resource type="Texture2D" uid="uid://lrobdomqw1io" path="res://art/Bec_walk_down_2.png" id="4_s4i71"]
+[ext_resource type="Texture2D" uid="uid://cv8qtllpieahh" path="res://art/Bec_walk_right_1.png" id="5_f3mcp"]
+[ext_resource type="Texture2D" uid="uid://deqber0kxmgfi" path="res://art/Bec_walk_right_2.png" id="6_o2hqu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahmgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_geqff")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n5twp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s4i71")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f3mcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o2hqu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpqv1"]
+size = Vector2(30, 24)
+
+[node name="Player" type="Area2D"]
+position = Vector2(79, 50)
+script = ExtResource("1_4hwkr")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_ahmgr")
+animation = &"up"
+frame_progress = 0.639802
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_jpqv1")

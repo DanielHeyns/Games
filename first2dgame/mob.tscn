@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2v11vkm3e106"]
+
+[ext_resource type="Script" path="res://Mob.cs" id="1_6tw41"]
+[ext_resource type="Texture2D" uid="uid://ltfxvlg8ydqc" path="res://art/mosquito_1.png" id="2_8olcb"]
+[ext_resource type="Texture2D" uid="uid://c5fj3eibj2nx6" path="res://art/Ant_1.png" id="2_40d0l"]
+[ext_resource type="Texture2D" uid="uid://c4m75fmdblbr7" path="res://art/Ant_2.png" id="3_cyhb0"]
+[ext_resource type="Texture2D" uid="uid://cy3i5q4e3wp2a" path="res://art/mosquito_2.png" id="3_nrmmr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15sk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_40d0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cyhb0")
+}],
+"loop": true,
+"name": &"ant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8olcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nrmmr")
+}],
+"loop": true,
+"name": &"mosquito",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2idn"]
+size = Vector2(39.9999, 40.0001)
+
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_6tw41")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_15sk8")
+animation = &"ant"
+frame_progress = 0.855861
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_d2idn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, 0.5)
+scale = Vector2(2.45, 2.35)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]
