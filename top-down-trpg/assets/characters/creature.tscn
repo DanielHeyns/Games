@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://dq4ye7ngbwmo3"]
+
+[ext_resource type="Script" uid="uid://bgk67we6vvqw0" path="res://assets/characters/creature.gd" id="1_4wlns"]
+[ext_resource type="PackedScene" uid="uid://cwrsiwve1fg7x" path="res://assets/character_components/move_component.tscn" id="2_rv78h"]
+[ext_resource type="PackedScene" uid="uid://b26tkbuod8ba6" path="res://assets/character_components/ray_casting_component.tscn" id="3_7n8xq"]
+[ext_resource type="PackedScene" uid="uid://bgnbrsweroq6i" path="res://assets/character_components/random_movement_component.tscn" id="4_7n8xq"]
+[ext_resource type="PackedScene" uid="uid://b5aaggd2rdpw1" path="res://assets/character_components/take_damage_component.tscn" id="6_sqwtr"]
+[ext_resource type="PackedScene" uid="uid://bjdl7c8us85k4" path="res://assets/character_components/inventory_component.tscn" id="7_iwgmo"]
+[ext_resource type="PackedScene" uid="uid://1hty3s38rgys" path="res://assets/character_components/melee_attack_component.tscn" id="7_nyf8n"]
+[ext_resource type="PackedScene" uid="uid://cipphfc7hfwdh" path="res://assets/character_components/attributes_component.tscn" id="8_40ap5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wlns"]
+size = Vector2(16, 16)
+
+[node name="Creature" type="CharacterBody2D"]
+script = ExtResource("1_4wlns")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+region_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4wlns")
+
+[node name="MoveComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_rv78h")]
+sprite = NodePath("../Sprite2D")
+
+[node name="RayCastingComponent" parent="." instance=ExtResource("3_7n8xq")]
+
+[node name="RandomMovementComponent" parent="." node_paths=PackedStringArray("move_component", "ray_casting_component", "melee_attack_component") instance=ExtResource("4_7n8xq")]
+move_component = NodePath("../MoveComponent")
+ray_casting_component = NodePath("../RayCastingComponent")
+melee_attack_component = NodePath("../MeleeAttackComponent")
+
+[node name="TakeDamageComponent" parent="." node_paths=PackedStringArray("inventory_component", "attributes_component") instance=ExtResource("6_sqwtr")]
+inventory_component = NodePath("../Inventory")
+attributes_component = NodePath("../AttributesComponent")
+
+[node name="MeleeAttackComponent" parent="." instance=ExtResource("7_nyf8n")]
+
+[node name="Inventory" parent="." node_paths=PackedStringArray("take_damage_component") instance=ExtResource("7_iwgmo")]
+take_damage_component = NodePath("../TakeDamageComponent")
+
+[node name="AttributesComponent" parent="." node_paths=PackedStringArray("take_damage_component") instance=ExtResource("8_40ap5")]
+take_damage_component = NodePath("../TakeDamageComponent")

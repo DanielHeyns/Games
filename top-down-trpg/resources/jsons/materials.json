@@ -1,0 +1,28 @@
+{
+	"materials":[
+		{
+			"name": "Skin",
+			"tier": 0,
+		},
+		{
+			"name": "Primal",
+			"tier": 1,
+			"examples": "Wood, Common Bone, Chitin"
+		},
+		{
+			"name": "Basic Forged",
+			"tier": 2,
+			"examples": "Copper, Bronze, Cured Leather"
+		},
+		{
+			"name": "Iron",
+			"tier": 3,
+			"examples": "Forged Iron, Tempered/infused hide"
+		},
+		{
+			"name": "Steelcraft",
+			"tier": 4,
+			"examples": "Tempered Steel"
+		}
+	]
+}

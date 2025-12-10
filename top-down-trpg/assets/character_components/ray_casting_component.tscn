@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://b26tkbuod8ba6"]
+
+[ext_resource type="Script" uid="uid://b2cq2mk1001co" path="res://assets/character_components/ray_casting_component.gd" id="1_n2aov"]
+
+[node name="RayCastingComponent" type="Node2D"]
+script = ExtResource("1_n2aov")
+
+[node name="UpCast" type="RayCast2D" parent="."]
+position = Vector2(0, -16)
+target_position = Vector2(0, -16)
+hit_from_inside = true
+
+[node name="UpLeftCast" type="RayCast2D" parent="."]
+position = Vector2(-16, -16)
+target_position = Vector2(-16, -16)
+hit_from_inside = true
+
+[node name="UpRightCast" type="RayCast2D" parent="."]
+position = Vector2(16, -16)
+target_position = Vector2(16, -16)
+hit_from_inside = true
+
+[node name="RightCast" type="RayCast2D" parent="."]
+position = Vector2(16, 0)
+target_position = Vector2(16, 0)
+hit_from_inside = true
+
+[node name="DownCast" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
+target_position = Vector2(0, 16)
+hit_from_inside = true
+
+[node name="DownLeftCast" type="RayCast2D" parent="."]
+position = Vector2(-16, 16)
+target_position = Vector2(-16, 16)
+hit_from_inside = true
+
+[node name="DownRightCast" type="RayCast2D" parent="."]
+position = Vector2(16, 16)
+target_position = Vector2(16, 16)
+hit_from_inside = true
+
+[node name="LeftCast" type="RayCast2D" parent="."]
+position = Vector2(-16, 0)
+target_position = Vector2(-16, 0)
+hit_from_inside = true

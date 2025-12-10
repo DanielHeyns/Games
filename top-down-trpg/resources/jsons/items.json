@@ -1,0 +1,30 @@
+{
+	"baseItems":{
+		"sword":{
+			"name": "Sword",
+			"slot": "melee_weapon_slot",
+			"pierce": 0.3,
+			"puncture": 0.3,
+			"damage": "1d8",
+			"armorIgnore": 0
+		},
+		"chestplate":{
+			"name": "Chestplate",
+			"slot": "torso_slot",
+			"avoidance": 0.1,
+			"coverage": 0.5
+		}
+	},
+	"items":{
+		"bone_sword": {
+			"name": "Bone Sword",
+			"inherits": "sword",
+			"material_tier": 1
+		},
+		"bronze_chestplate":{
+			"name": "Bronze Chestplate",
+			"inherits": "chestplate",
+			"material_tier": 2
+		}
+	}
+}

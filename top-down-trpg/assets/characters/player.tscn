@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=3 uid="uid://vas4nq0gnysr"]
+
+[ext_resource type="Script" uid="uid://fgyy3ww827ub" path="res://assets/characters/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://hoqptm70a2qr" path="res://assets/character_components/player_input_component.tscn" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://cwrsiwve1fg7x" path="res://assets/character_components/move_component.tscn" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://0nrvvfobubck" path="res://resources/art/rogues.png" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://b26tkbuod8ba6" path="res://assets/character_components/ray_casting_component.tscn" id="5_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://1hty3s38rgys" path="res://assets/character_components/melee_attack_component.tscn" id="6_sqwyp"]
+[ext_resource type="PackedScene" uid="uid://b5aaggd2rdpw1" path="res://assets/character_components/take_damage_component.tscn" id="7_5rkq3"]
+[ext_resource type="PackedScene" uid="uid://bjdl7c8us85k4" path="res://assets/character_components/inventory_component.tscn" id="8_gpudx"]
+[ext_resource type="PackedScene" uid="uid://cipphfc7hfwdh" path="res://assets/character_components/attributes_component.tscn" id="9_o7p4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_qhqgy")
+region_enabled = true
+region_rect = Rect2(64, 128, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="PlayerInputComponent" parent="." node_paths=PackedStringArray("move_component", "ray_casting_component", "melee_attack_component") instance=ExtResource("2_qhqgy")]
+move_component = NodePath("../MoveComponent")
+ray_casting_component = NodePath("../RayCastingComponent")
+melee_attack_component = NodePath("../MeleeAttackComponent")
+
+[node name="MoveComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_dqkch")]
+sprite = NodePath("../Sprite2D")
+
+[node name="RayCastingComponent" parent="." instance=ExtResource("5_qlg0r")]
+
+[node name="MeleeAttackComponent" parent="." instance=ExtResource("6_sqwyp")]
+
+[node name="TakeDamageComponent" parent="." node_paths=PackedStringArray("inventory_component", "attributes_component") instance=ExtResource("7_5rkq3")]
+inventory_component = NodePath("../InventoryComponent")
+attributes_component = NodePath("../AttributesComponent")
+
+[node name="InventoryComponent" parent="." instance=ExtResource("8_gpudx")]
+
+[node name="AttributesComponent" parent="." instance=ExtResource("9_o7p4c")]

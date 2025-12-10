@@ -1,0 +1,54 @@
+{
+	"unused_creatures":[
+		{
+			"name": "Snake",
+			"hitpoints": 11,
+			"coverage": 0,
+			"material": 0,
+			"avoidance": 0.5,
+			"spriteArt":{
+				"fileName": "animals.png",
+				"x": 0,
+				"y": 224
+			}
+		},
+	],
+	"creatures":[
+		{
+			"name": "Lizard",
+			"hitpoints": 10,
+			"coverage": 0,
+			"material_tier": 0,
+			"avoidance": 0.5,
+			"spriteArt":{
+				"fileName": "animals.png",
+				"x": 64,
+				"y": 256
+			}
+		},
+				{
+			"name": "Aligator",
+			"hitpoints": 20,
+			"coverage": 1,
+			"material_tier": 1,
+			"avoidance": 0.2,
+			"spriteArt":{
+				"fileName": "animals.png",
+				"x": 0,
+				"y": 256
+			}
+		},
+				{
+			"name": "Snapping Turtle",
+			"hitpoints": 15,
+			"coverage": 0.5,
+			"material_tier": 2,
+			"avoidance": 0,
+			"spriteArt":{
+				"fileName": "animals.png",
+				"x": 128,
+				"y": 256
+			}
+		}
+	]
+}
