@@ -1,18 +1,32 @@
 {
-	"baseItems":{
+	"base_items":{
 		"sword":{
 			"name": "Sword",
 			"slot": "melee_weapon_slot",
-			"pierce": 0.3,
+			"precision": 0.3,
 			"puncture": 0.3,
 			"damage": "1d8",
-			"armorIgnore": 0
+			"armor_ignore": 0
 		},
 		"chestplate":{
 			"name": "Chestplate",
 			"slot": "torso_slot",
-			"avoidance": 0.1,
+			"avoidance": -0.1,
 			"coverage": 0.5
+		},
+		"hide":{
+			"name": "Hide",
+			"slot": "torso_slot",
+			"avoidance": 0,
+			"coverage": 1,
+			"lootable": 0
+		},
+		"shell":{
+			"name": "Shell",
+			"slot": "torso_slot",
+			"avoidance": -0.2,
+			"coverage": 0.7,
+			"lootable": 0
 		}
 	},
 	"items":{
@@ -21,9 +35,24 @@
 			"inherits": "sword",
 			"material_tier": 1
 		},
+		"bronze_sword": {
+			"name": "Bronze Sword",
+			"inherits": "sword",
+			"material_tier": 2
+		},
 		"bronze_chestplate":{
 			"name": "Bronze Chestplate",
 			"inherits": "chestplate",
+			"material_tier": 2
+		},
+		"scaly_hide":{
+			"name": "Scaly Hide",
+			"inherits": "hide",
+			"material_tier": 1
+		},
+		"hard_bone_shell":{
+			"name": "Hard Bone Shell",
+			"inherits": "shell",
 			"material_tier": 2
 		}
 	}

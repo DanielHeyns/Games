@@ -6,8 +6,8 @@
 		"intelligence":3,
 		"magic_potential":3
 	},
-	"equipment":{
-		"melee_weapon_slot": "bone_sword",
-		"torso_slot": "bronze_chestplate"
-	}
+	"equipment":[
+			"bone_sword",
+			"bronze_chestplate"
+	]
 }

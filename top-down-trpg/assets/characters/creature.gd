@@ -11,9 +11,18 @@ func _set_sprite_from_dict(creature_dict):
 
 func setup_from_dict(creature_dict):
 	_set_sprite_from_dict(creature_dict)
-	$TakeDamageComponent.setup_initial_values(
-		creature_dict["hitpoints"], 
-		creature_dict["coverage"], 
-		creature_dict["material_tier"], 
-		creature_dict["avoidance"]
+	name = creature_dict["name"]
+	$AttributesComponent.setup_initial_values(
+		creature_dict["strength"],
+		creature_dict["agility"],
+		creature_dict["toughness"],
+		creature_dict["intelligence"],
+		creature_dict["magic_potential"]
 	)
+	$InventoryComponent.equip_items(creature_dict.get("equipment", []))
+
+func printout():
+	print("Name: ", name)
+	$AttributesComponent.print_attributes()
+	$InventoryComponent.print_equipment()
+	$TakeDamageComponent.print_values()

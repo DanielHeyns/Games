@@ -32,13 +32,13 @@ ray_casting_component = NodePath("../RayCastingComponent")
 melee_attack_component = NodePath("../MeleeAttackComponent")
 
 [node name="TakeDamageComponent" parent="." node_paths=PackedStringArray("inventory_component", "attributes_component") instance=ExtResource("6_sqwtr")]
-inventory_component = NodePath("../Inventory")
+inventory_component = NodePath("../InventoryComponent")
 attributes_component = NodePath("../AttributesComponent")
 
-[node name="MeleeAttackComponent" parent="." instance=ExtResource("7_nyf8n")]
+[node name="MeleeAttackComponent" parent="." node_paths=PackedStringArray("inventory_component", "attributes_component") instance=ExtResource("7_nyf8n")]
+inventory_component = NodePath("../InventoryComponent")
+attributes_component = NodePath("../AttributesComponent")
 
-[node name="Inventory" parent="." node_paths=PackedStringArray("take_damage_component") instance=ExtResource("7_iwgmo")]
-take_damage_component = NodePath("../TakeDamageComponent")
+[node name="InventoryComponent" parent="." instance=ExtResource("7_iwgmo")]
 
-[node name="AttributesComponent" parent="." node_paths=PackedStringArray("take_damage_component") instance=ExtResource("8_40ap5")]
-take_damage_component = NodePath("../TakeDamageComponent")
+[node name="AttributesComponent" parent="." instance=ExtResource("8_40ap5")]

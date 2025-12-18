@@ -34,7 +34,9 @@ sprite = NodePath("../Sprite2D")
 
 [node name="RayCastingComponent" parent="." instance=ExtResource("5_qlg0r")]
 
-[node name="MeleeAttackComponent" parent="." instance=ExtResource("6_sqwyp")]
+[node name="MeleeAttackComponent" parent="." node_paths=PackedStringArray("inventory_component", "attributes_component") instance=ExtResource("6_sqwyp")]
+inventory_component = NodePath("../InventoryComponent")
+attributes_component = NodePath("../AttributesComponent")
 
 [node name="TakeDamageComponent" parent="." node_paths=PackedStringArray("inventory_component", "attributes_component") instance=ExtResource("7_5rkq3")]
 inventory_component = NodePath("../InventoryComponent")

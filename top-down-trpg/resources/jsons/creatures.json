@@ -16,10 +16,11 @@
 	"creatures":[
 		{
 			"name": "Lizard",
-			"hitpoints": 10,
-			"coverage": 0,
-			"material_tier": 0,
-			"avoidance": 0.5,
+			"strength": 1,
+			"agility": 5,
+			"toughness": 1,
+			"intelligence": 1,
+			"magic_potential":0,
 			"spriteArt":{
 				"fileName": "animals.png",
 				"x": 64,
@@ -28,10 +29,14 @@
 		},
 				{
 			"name": "Aligator",
-			"hitpoints": 20,
-			"coverage": 1,
-			"material_tier": 1,
-			"avoidance": 0.2,
+			"strength": 1,
+			"agility": 2,
+			"toughness": 4,
+			"intelligence": 1,
+			"magic_potential":0,
+			"equipment":[
+				"scaly_hide"
+			],
 			"spriteArt":{
 				"fileName": "animals.png",
 				"x": 0,
@@ -40,10 +45,14 @@
 		},
 				{
 			"name": "Snapping Turtle",
-			"hitpoints": 15,
-			"coverage": 0.5,
-			"material_tier": 2,
-			"avoidance": 0,
+			"strength": 1,
+			"agility": 0,
+			"toughness": 2,
+			"intelligence": 1,
+			"magic_potential":0,
+			"equipment":[
+				"hard_bone_shell"
+			],
 			"spriteArt":{
 				"fileName": "animals.png",
 				"x": 128,
