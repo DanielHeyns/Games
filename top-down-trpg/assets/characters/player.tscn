@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vas4nq0gnysr"]
+[gd_scene load_steps=12 format=3 uid="uid://vas4nq0gnysr"]
 
 [ext_resource type="Script" uid="uid://fgyy3ww827ub" path="res://assets/characters/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://hoqptm70a2qr" path="res://assets/character_components/player_input_component.tscn" id="2_qhqgy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5aaggd2rdpw1" path="res://assets/character_components/take_damage_component.tscn" id="7_5rkq3"]
 [ext_resource type="PackedScene" uid="uid://bjdl7c8us85k4" path="res://assets/character_components/inventory_component.tscn" id="8_gpudx"]
 [ext_resource type="PackedScene" uid="uid://cipphfc7hfwdh" path="res://assets/character_components/attributes_component.tscn" id="9_o7p4c"]
+[ext_resource type="Texture2D" uid="uid://bp1etgo5gbprm" path="res://resources/art/LightSprite.png" id="10_1we82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(16, 16)
@@ -20,6 +21,11 @@ script = ExtResource("1_3vyb7")
 texture = ExtResource("3_qhqgy")
 region_enabled = true
 region_rect = Rect2(64, 128, 32, 32)
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+energy = 0.2
+shadow_enabled = true
+texture = ExtResource("10_1we82")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3vyb7")

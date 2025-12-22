@@ -56,9 +56,9 @@ func equip(item_string:String, fire_the_signal:bool = true):
 		changed_equipment.emit()
 	
 func calculate_take_damage_stats_from_equipment() -> Array:
-	var calculated_coverage: float = 0
-	var calculated_material_tier: float = 0
-	var calulated_avoidance:float = 0
+	var calculated_coverage: int = 0
+	var calculated_material_tier: int = 0
+	var calulated_avoidance:int = 0
 	
 	if torso_slot_string:
 		var torso_item_full_dict = JsonAutoloads.get_full_item_dict(torso_slot_string)
@@ -71,19 +71,21 @@ func calculate_take_damage_stats_from_equipment() -> Array:
 	return [calculated_coverage, calculated_material_tier, calulated_avoidance]
 
 func calculate_melee_attack_stats_from_equipment() -> Array:
-	var calculated_precision: float = 0
-	var calculated_puncture: float =0
-	var calculated_damage: String = "0d0"
-	var calculated_armor_ignore: float = 0
+	var calculated_precision: int = 0
+	var calculated_puncture: int =0
+	var calculated_damage_die: int = 0
+	var calculated_impact: int = 0
 	var calculated_material_tier: int = 0
+	var is_heavy: bool = false
 	
 	if melee_weapon_slot_string:
 		var melee_weapon_item_full_dict = JsonAutoloads.get_full_item_dict(melee_weapon_slot_string)
 		calculated_precision = melee_weapon_item_full_dict["precision"]
 		calculated_puncture = melee_weapon_item_full_dict["puncture"]
-		calculated_damage = melee_weapon_item_full_dict["damage"]
-		calculated_armor_ignore = melee_weapon_item_full_dict["armor_ignore"]
+		calculated_damage_die = melee_weapon_item_full_dict["damage_die"]
+		calculated_impact = melee_weapon_item_full_dict["impact"]
 		calculated_material_tier = melee_weapon_item_full_dict["material_tier"]
+		is_heavy = melee_weapon_item_full_dict["is_heavy"]
 	# TODO: As we add more items and flesh out stats and stuff, there will probably be more things to take into account from the equipment side
-	return [calculated_precision, calculated_puncture, calculated_damage, calculated_armor_ignore, calculated_material_tier]
+	return [calculated_precision, calculated_puncture, calculated_damage_die, calculated_impact, calculated_material_tier, is_heavy]
 	

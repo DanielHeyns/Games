@@ -28,10 +28,11 @@ func setup_initial_values(strength:int, agility:int, toughness: int, intelligenc
 
 func calculate_take_damage_stats_from_attributes():
 	var calc_hitpoints = 10 + toughness * 5
-	var calc_avoidance = 0.1 + agility * 0.1
+	var calc_avoidance = agility
 	return [calc_hitpoints, calc_avoidance]
 
 func calculate_melee_attack_stats_from_attributes():
-	var calc_precision = 0.1 * agility
-	var calc_puncture = 0.1 * strength
-	return [calc_puncture, calc_precision]
+	var calc_acc_heavy = strength
+	var calc_acc_not_heavy= agility
+	var calc_puncture = strength
+	return [calc_acc_heavy, calc_acc_not_heavy, calc_puncture]

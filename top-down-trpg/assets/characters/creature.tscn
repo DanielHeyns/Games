@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq4ye7ngbwmo3"]
+[gd_scene load_steps=11 format=3 uid="uid://dq4ye7ngbwmo3"]
 
 [ext_resource type="Script" uid="uid://bgk67we6vvqw0" path="res://assets/characters/creature.gd" id="1_4wlns"]
 [ext_resource type="PackedScene" uid="uid://cwrsiwve1fg7x" path="res://assets/character_components/move_component.tscn" id="2_rv78h"]
@@ -9,13 +9,19 @@
 [ext_resource type="PackedScene" uid="uid://1hty3s38rgys" path="res://assets/character_components/melee_attack_component.tscn" id="7_nyf8n"]
 [ext_resource type="PackedScene" uid="uid://cipphfc7hfwdh" path="res://assets/character_components/attributes_component.tscn" id="8_40ap5"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iwgmo"]
+light_mode = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wlns"]
 size = Vector2(16, 16)
 
 [node name="Creature" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_4wlns")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_iwgmo")
 region_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

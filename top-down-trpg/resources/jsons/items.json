@@ -3,29 +3,39 @@
 		"sword":{
 			"name": "Sword",
 			"slot": "melee_weapon_slot",
-			"precision": 0.3,
-			"puncture": 0.3,
-			"damage": "1d8",
-			"armor_ignore": 0
+			"precision": 2,
+			"puncture": 2,
+			"damage_die": 4,
+			"impact": 0,
+			"is_heavy": 0
+		},
+		"battle_axe":{
+			"name": "Battle Axe",
+			"slot": "melee_weapon_slot",
+			"precision": 0,
+			"puncture": 4,
+			"damage_die": 6,
+			"impact": 0,
+			"is_heavy": 1
 		},
 		"chestplate":{
 			"name": "Chestplate",
 			"slot": "torso_slot",
-			"avoidance": -0.1,
-			"coverage": 0.5
+			"avoidance": -1,
+			"coverage": 2
 		},
 		"hide":{
 			"name": "Hide",
 			"slot": "torso_slot",
 			"avoidance": 0,
-			"coverage": 1,
+			"coverage": 4,
 			"lootable": 0
 		},
 		"shell":{
 			"name": "Shell",
 			"slot": "torso_slot",
-			"avoidance": -0.2,
-			"coverage": 0.7,
+			"avoidance": -2,
+			"coverage": 3,
 			"lootable": 0
 		}
 	},
@@ -38,6 +48,11 @@
 		"bronze_sword": {
 			"name": "Bronze Sword",
 			"inherits": "sword",
+			"material_tier": 2
+		},
+		"bronze_battle_axe": {
+			"name": "Bronze Battle Axe",
+			"inherits": "battle_axe",
 			"material_tier": 2
 		},
 		"bronze_chestplate":{
