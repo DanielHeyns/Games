@@ -3,7 +3,7 @@
 		{
 			"name": "Snake",
 			"hitpoints": 11,
-			"coverage": 0,
+			"coverage": 1,
 			"material": 0,
 			"avoidance": 0.5,
 			"spriteArt":{
