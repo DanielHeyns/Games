@@ -1,0 +1,32 @@
+{
+    "name":"Entrance Foyer",
+    "description":"The space is barely lit, a small crack in the wall paneling allows a sliver of sunshine to illuminate the dusty, rotted interior of this foyer. You see a boxed shoe rack, scraps of leather spilling from it and a small candle resting on top.",
+    "interactables":[
+        {
+            "name":"candle",
+            "condition":{
+                "var_name":"candle_noticed",
+                "req_val": 1
+            },
+            "actions":[
+                {
+                    "name": "look",
+                    "description": "The light catches the bronze of the candle's holder, it is fashioned with a ring, for roaming halls late at night."
+                },
+                {
+                    "name": "set on fire",
+                    "description": "You strike a match and hold it up to the wick. The candle lights.",
+                    "assignment":{
+                        "var_name": "candle_lit",
+                        "val": 1
+                    },
+                    "condition":{
+                        "var_name": "candle_lit",
+                        "req_val": 0
+                    }
+                }
+            ]
+            
+        }
+    ]
+}
