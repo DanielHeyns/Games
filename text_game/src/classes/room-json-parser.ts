@@ -19,7 +19,12 @@ export default class RoomJsonParser {
     public getRooms(): Room[]{
         let room_array:Room[]  = []
         this.rooms_json.forEach((room_json) => {
-            let room:Room = new Room(room_json['name'], room_json['description'], 0)
+            let position:number = 1 // TODO: make a way to randomize the rooms after making more rooms
+            if(room_json?.starting_room){
+                position = 0
+            }
+
+            let room:Room = new Room(room_json['name'], room_json['description'], position)
             
             room_json["interactables"].forEach((interactable_json:any) =>{
                 let condition: Condition | undefined = this._create_condition_from_json(interactable_json);

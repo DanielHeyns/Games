@@ -1,6 +1,7 @@
 {
     "name":"Entrance Foyer",
     "description":"The space is barely lit, a small crack in the wall paneling allows a sliver of sunshine to illuminate the dusty, rotted interior of this foyer. You see a boxed shoe rack, scraps of leather spilling from it and a small candle resting on top.",
+    "starting_room": true,
     "interactables":[
         {
             "name":"candle",

@@ -1,0 +1,10 @@
+[
+    {
+        "canonical": "ignite",
+        "synonyms":["ignite", "light", "burn"]
+    },
+    {
+        "canonical": "look",
+        "synonyms": ["look", "inspect", "glance", "gaze", "study", "observe"]
+    }
+]
