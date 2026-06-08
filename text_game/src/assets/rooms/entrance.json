@@ -15,7 +15,7 @@
                     "description": "The light catches the bronze of the candle's holder, it is fashioned with a ring, for roaming halls late at night."
                 },
                 {
-                    "name": "set on fire",
+                    "name": "ignite",
                     "description": "You strike a match and hold it up to the wick. The candle lights.",
                     "assignment":{
                         "var_name": "candle_lit",
